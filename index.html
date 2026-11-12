@@ -84,13 +84,16 @@ section{padding:5rem 0}
 .edu-deg{font-weight:500;font-size:0.97rem;margin-bottom:3px}
 .edu-inst{font-size:0.82rem;color:var(--ink2)}
 .edu-note{font-size:0.78rem;color:var(--ink3);margin-top:6px;font-style:italic}
+.edu-award{font-size:0.78rem;color:var(--ink2);margin-top:8px}
+.edu-award strong{font-weight:500;color:var(--accent)}
 .edu-badge{font-size:0.68rem;font-weight:500;padding:4px 10px;border-radius:100px;background:var(--accent-pale);color:#0F6E56;border:0.5px solid #9FE1CB;white-space:nowrap;align-self:start}
 .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .proj-card{background:var(--card);border:0.5px solid var(--line);border-radius:var(--radius);padding:1.3rem 1.4rem;display:flex;flex-direction:column;gap:8px;transition:border-color 0.25s,transform 0.25s,box-shadow 0.25s;cursor:default;position:relative;overflow:hidden}
-.proj-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(29,158,117,0.04),transparent);opacity:0;transition:opacity 0.3s}
+.proj-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(29,158,117,0.04),transparent);opacity:0;transition:opacity 0.3s;pointer-events:none}
 .proj-card:hover{border-color:var(--accent2);transform:translateY(-4px);box-shadow:0 16px 40px rgba(29,158,117,0.1)}
 .proj-card:hover::after{opacity:1}
 .proj-card.featured{border-color:var(--accent2);background:linear-gradient(135deg,rgba(29,158,117,0.04),var(--card))}
+.proj-card.wide{grid-column:1 / -1}
 .proj-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
 .proj-title{font-weight:500;font-size:0.9rem;line-height:1.4}
 .proj-badge{font-size:0.65rem;font-weight:500;padding:3px 8px;border-radius:100px;background:var(--accent-pale);color:#0F6E56;white-space:nowrap;flex-shrink:0}
@@ -156,18 +159,20 @@ footer a:hover{text-decoration:underline}
   <div class="wrap">
     <div class="hero-inner">
       <div>
-        <div class="hero-eyebrow">Software & data engineer</div>
+        <div class="hero-eyebrow">Software, ML &amp; data engineer</div>
         <h1 class="hero-name">Pallavi<br><em>Bharadwaj</em></h1>
-        <p class="hero-bio">Computer Science graduate (First Class with Distinction) and MSc Data Science candidate at the University of York. I build backend systems, APIs and data pipelines, and pick up new tools quickly.</p>
+        <p class="hero-bio">Computer Science graduate (First Class with Distinction) and MSc Data Science graduate from the University of York, where my dissertation won the Department of Computer Science prize for best project in the cohort. I build backend systems, APIs, data pipelines and LLM-based tools.</p>
         <div class="hero-links">
           <a class="btn btn-primary" href="mailto:pallavibharadwaj28@gmail.com">Get in touch</a>
           <a class="btn btn-ghost" href="https://github.com/pallavii-bharadwaj" target="_blank">GitHub ↗</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/pallavi-bharadwaj-2403ba254/" target="_blank">LinkedIn ↗</a>
         </div>
         <div class="tag-strip">
           <span class="tag">Python</span>
           <span class="tag">SQL</span>
           <span class="tag">Java</span>
           <span class="tag">PySpark</span>
+          <span class="tag">LLMs &amp; RAG</span>
           <span class="tag">AWS EC2</span>
           <span class="tag">Docker</span>
           <span class="tag">CI/CD</span>
@@ -175,20 +180,20 @@ footer a:hover{text-decoration:underline}
       </div>
       <div class="hero-right">
         <div class="stat-card reveal d1">
-          <div class="stat-num">7</div>
-          <div class="stat-label">Data & cloud projects</div>
+          <div class="stat-num">81/100</div>
+          <div class="stat-label">MSc dissertation (Distinction)</div>
         </div>
         <div class="stat-card reveal d2">
           <div class="stat-num">1M+</div>
           <div class="stat-label">Records processed (Spark pipeline)</div>
         </div>
         <div class="stat-card reveal d3">
-          <div class="stat-num">4</div>
-          <div class="stat-label">Certifications</div>
+          <div class="stat-num">20% → 0%</div>
+          <div class="stat-label">Hallucinated LLM explanations, after redesign</div>
         </div>
         <div class="stat-card reveal d4">
           <div class="stat-num">2</div>
-          <div class="stat-label">Degrees (BEng & MSc)</div>
+          <div class="stat-label">Degrees (BEng &amp; MSc)</div>
         </div>
       </div>
     </div>
@@ -203,16 +208,16 @@ footer a:hover{text-decoration:underline}
     </div>
     <div class="about-grid">
       <div class="about-text reveal d1">
-        <p>I'm a Computer Science graduate (First Class with Distinction) and MSc Data Science candidate at the University of York. I enjoy building backend systems and solving hard problems, and I pick up new tools and languages quickly.</p>
-        <p>I'm comfortable across Python, SQL and Java, with hands-on experience building APIs, data pipelines, and test infrastructure in production settings, from high-concurrency billing systems to distributed big-data pipelines.</p>
-        <p>My dissertation focuses on building and evaluating LLM and RAG-based systems for natural-language querying, information retrieval and decision support, engineering retrieval and prompt strategies to maximise deterministic accuracy and minimise hallucinations.</p>
+        <p>I'm a Computer Science graduate (First Class with Distinction) and an MSc Data Science graduate from the University of York. I enjoy building backend systems and solving hard problems, and I pick up new tools and languages quickly.</p>
+        <p>I'm comfortable across Python, SQL and Java, with hands-on experience building REST APIs, data pipelines and automated tests, from a billing and finance system to a Spark pipeline over a million records, and a forecasting service deployed on AWS.</p>
+        <p>My MSc dissertation built a clinical decision-support system in which a local LLM explains a machine-learning model's results using NICE guideline text. Fixing hallucinations was the main engineering problem: I changed the design so my code states the facts and the model only summarises them. The project won the Department of Computer Science prize for the best project in the 2025/26 MSc Data Science cohort.</p>
       </div>
       <div class="skill-pills reveal d2">
         <div class="skill-group">
           <div class="sg-name">Systems &amp; Languages</div>
           <div class="sg-items">
-            <div class="sg-item">C, Java, Python, C#</div>
-            <div class="sg-item">SQL</div>
+            <div class="sg-item">Python, SQL, Java, C, C#</div>
+            <div class="sg-item">Bash</div>
             <div class="sg-item">Linux, Git</div>
           </div>
         </div>
@@ -220,8 +225,17 @@ footer a:hover{text-decoration:underline}
           <div class="sg-name">Data &amp; Distributed Systems</div>
           <div class="sg-items">
             <div class="sg-item">Apache Spark (PySpark)</div>
+            <div class="sg-item">Azure Databricks, Delta Lake</div>
             <div class="sg-item">Distributed Data Processing</div>
-            <div class="sg-item">Azure Databricks, Data Lake</div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-name">ML &amp; LLMs</div>
+          <div class="sg-items">
+            <div class="sg-item">scikit-learn, PyTorch</div>
+            <div class="sg-item">SHAP, LIME</div>
+            <div class="sg-item">LLMs, RAG, prompt engineering</div>
+            <div class="sg-item">Hallucination evaluation</div>
           </div>
         </div>
         <div class="skill-group">
@@ -234,12 +248,20 @@ footer a:hover{text-decoration:underline}
           </div>
         </div>
         <div class="skill-group">
-          <div class="sg-name">Software Architecture</div>
+          <div class="sg-name">Software Engineering</div>
           <div class="sg-items">
             <div class="sg-item">Data Structures &amp; Algorithms</div>
-            <div class="sg-item">REST APIs</div>
+            <div class="sg-item">REST APIs, FastAPI</div>
             <div class="sg-item">OOP</div>
             <div class="sg-item">SQL Schema Design</div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-name">Tools</div>
+          <div class="sg-items">
+            <div class="sg-item">Claude Code</div>
+            <div class="sg-item">Tableau</div>
+            <div class="sg-item">Excel</div>
           </div>
         </div>
       </div>
@@ -259,9 +281,10 @@ footer a:hover{text-decoration:underline}
         <div>
           <div class="edu-deg">MSc Data Science</div>
           <div class="edu-inst">University of York, UK</div>
-          <div class="edu-note">Coursework: Algorithms, Statistical Modelling, Machine Learning, Data Analytics, AI &amp; Intelligent Systems. Dissertation (in progress): LLM &amp; RAG-based systems for natural-language querying, information retrieval and decision support.</div>
+          <div class="edu-note">Coursework: Algorithms, Statistical Modelling, Machine Learning, Data Analytics, AI &amp; Intelligent Systems. Dissertation: Integrated Database and Large Language Modelling for Clinical Support (Distinction, 81/100).</div>
+          <div class="edu-award"><strong>Departmental Prize 2025/26:</strong> Best Project in the MSc Data Science cohort, Department of Computer Science.</div>
         </div>
-        <span class="edu-badge">In progress</span>
+        <span class="edu-badge">Dissertation · Distinction</span>
       </div>
       <div class="edu-card reveal d2">
         <div class="edu-yr">Aug 2021 to Jul 2025</div>
@@ -283,35 +306,36 @@ footer a:hover{text-decoration:underline}
       <div class="sec-line"></div>
     </div>
     <div class="proj-grid">
-      <div class="proj-card featured reveal d1">
-        <div class="proj-head"><span class="proj-title">Clinical Bed Demand Forecasting API &amp; Infrastructure</span><span class="proj-badge aws">AWS</span></div>
-        <p class="proj-desc">Engineered and deployed a production-grade, low-latency REST API on AWS EC2 exposing predictive inference endpoints for real-time healthcare capacity planning. Configured TCP transport and AWS security-group routing for endpoint reachability, and built an end-to-end GitHub Actions CI/CD pipeline enforcing automated verification for deployment reliability.</p>
-        <a class="proj-link" href="https://github.com/pallavii-bharadwaj/hospital-bed-aws-deployment" target="_blank">View on GitHub ↗</a>
-        <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">FastAPI</span><span class="proj-tag">AWS EC2</span><span class="proj-tag">GitHub Actions</span><span class="proj-tag">CI/CD</span></div>
+      <div class="proj-card featured wide reveal d1">
+        <div class="proj-head"><span class="proj-title">Integrated Database and LLM for Clinical Decision Support</span><span class="proj-badge merit">Department Prize</span></div>
+        <p class="proj-desc">MSc dissertation (Distinction, 81/100) and a feasibility study: a clinical decision-support system where a local LLM (Qwen2.5) explains a machine-learning model's results using NICE NG101 guideline text. I harmonised three datasets (10,024 records) into one schema and trained a classifier that reached 86.73% accuracy and 0.742 macro-F1 under 5-fold cross-validation, then applied it to a separate 992-patient dataset without retraining. An ablation showed data availability mattered 2.4 to 4.5 times more than model architecture. SHAP and LIME supported the explanations. Early versions hallucinated in 6 of 30 explanations (20%); redesigning the system so my code states the facts and the LLM only summarises them brought that to 0. I worked with clinical experts to define the model inputs and presented the results to clinicians and non-technical audiences. Awarded the Department of Computer Science prize for the best project in the 2025/26 MSc Data Science cohort.</p>
+        <a class="proj-link" href="https://github.com/Pallavii-bharadwaj/LLM-structured-database-clinical-support" target="_blank">View on GitHub ↗</a>
+        <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">LLMs</span><span class="proj-tag">RAG</span><span class="proj-tag">scikit-learn</span><span class="proj-tag">SHAP</span><span class="proj-tag">LIME</span><span class="proj-tag">Qwen2.5</span></div>
       </div>
-      <div class="proj-card reveal d2">
-        <div class="proj-head"><span class="proj-title">LLM &amp; RAG Querying System</span><span class="proj-badge">Dissertation</span></div>
-        <p class="proj-desc">Building and evaluating LLM and RAG-based systems for natural-language querying, information retrieval and decision support. Engineering retrieval and prompt strategies to maximise deterministic accuracy and minimise hallucinations for production-like environments.</p>
-        <div class="proj-tags"><span class="proj-tag">LLMs</span><span class="proj-tag">RAG</span><span class="proj-tag">Information Retrieval</span><span class="proj-tag">Prompt Engineering</span></div>
+      <div class="proj-card featured reveal d2">
+        <div class="proj-head"><span class="proj-title">Clinical Bed Demand Forecasting API &amp; Infrastructure</span><span class="proj-badge aws">AWS</span></div>
+        <p class="proj-desc">Built and deployed a FastAPI REST service on AWS EC2 that serves hospital bed-demand predictions. Containerised it with Docker, configured EC2 inbound rules so the endpoint is reachable, and set up a GitHub Actions pipeline that trains the model, builds the image and health-checks the service on every push.</p>
+        <a class="proj-link" href="https://github.com/pallavii-bharadwaj/hospital-bed-aws-deployment" target="_blank">View on GitHub ↗</a>
+        <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">FastAPI</span><span class="proj-tag">Docker</span><span class="proj-tag">AWS EC2</span><span class="proj-tag">GitHub Actions</span><span class="proj-tag">CI/CD</span></div>
       </div>
       <div class="proj-card reveal d3">
         <div class="proj-head"><span class="proj-title">Regression Modelling for Hospital Bed Usage Prediction</span><span class="proj-badge">ML</span></div>
-        <p class="proj-desc">Benchmarked four models (Linear, Ridge, Lasso, Elastic Net) using rigorous repeated 5-fold cross-validation and automated hyperparameter tuning. Selected Ridge Regression as optimal, achieving Test RMSE of 1.50 bed days and explaining 67.8% of variance (R² = 0.678) in hospital occupancy data.</p>
+        <p class="proj-desc">Benchmarked four models (Linear, Ridge, Lasso, Elastic Net) using repeated 5-fold cross-validation and automated hyperparameter tuning. Selected Ridge Regression as optimal, achieving a test RMSE of 1.50 bed days and explaining 67.8% of variance (R² = 0.678) in hospital occupancy data.</p>
         <a class="proj-link" href="https://github.com/pallavii-bharadwaj/Regression-Modelling-for-Hospital-Bed-Usage-Prediction" target="_blank">View on GitHub ↗</a>
         <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Scikit-learn</span><span class="proj-tag">Pandas</span><span class="proj-tag">NumPy</span></div>
       </div>
       <div class="proj-card reveal d4">
         <div class="proj-head"><span class="proj-title">Distributed Data Scale Pipeline: Urban Analytics</span><span class="proj-badge">Cloud</span></div>
-        <p class="proj-desc">Architected an end-to-end cloud-native big-data pipeline on Azure Databricks and Delta Lake to ingest and process large-scale multi-source datasets. Optimised and transformed 1,000,000+ distributed records, restructuring wide-format matrices into highly indexed Spark DataFrames using custom composite keys.</p>
+        <p class="proj-desc">Built an end-to-end big-data pipeline on Azure Databricks and Delta Lake to ingest and process large multi-source datasets. Transformed 1,000,000+ records, restructuring wide-format matrices into indexed Spark DataFrames using custom composite keys.</p>
         <div class="proj-tags"><span class="proj-tag">PySpark</span><span class="proj-tag">Azure Databricks</span><span class="proj-tag">Delta Lake</span><span class="proj-tag">SQL</span></div>
       </div>
       <div class="proj-card reveal d5">
         <div class="proj-head"><span class="proj-title">Pronunciation Mistake Detection</span><span class="proj-badge pub">Journal Manuscript</span></div>
-        <p class="proj-desc">Speech processing and ML pipeline detecting pronunciation errors in real-time using logistic regression, decision trees, and random forests. Research submitted as an academic journal publication manuscript, December 2024.</p>
+        <p class="proj-desc">Speech processing and ML pipeline detecting pronunciation errors using logistic regression, decision trees, and random forests. Research submitted as an academic journal publication manuscript, December 2024.</p>
         <div class="proj-tags"><span class="proj-tag">Random Forest</span><span class="proj-tag">Audio Features</span><span class="proj-tag">ROC-AUC</span><span class="proj-tag">NLP</span></div>
       </div>
       <div class="proj-card reveal d6">
-        <div class="proj-head"><span class="proj-title">Renewable Energy & CO₂ Emissions Analysis</span><span class="proj-badge merit">Merit</span></div>
+        <div class="proj-head"><span class="proj-title">Renewable Energy &amp; CO₂ Emissions Analysis</span><span class="proj-badge merit">Merit</span></div>
         <p class="proj-desc">Multi-country temporal analysis of renewable electricity adoption and CO₂ trends across 205 countries (2010–2022). Identified statistically significant differences between income groups. Awarded Merit.</p>
         <div class="proj-tags"><span class="proj-tag">Pandas</span><span class="proj-tag">Matplotlib</span><span class="proj-tag">Seaborn</span><span class="proj-tag">Statistical Modelling</span></div>
       </div>
@@ -336,21 +360,21 @@ footer a:hover{text-decoration:underline}
         <div class="tl-org">Mind Path Innovations Pvt Ltd, Bangalore, India</div>
         <div class="tl-date">Jan 2025 to Jun 2025</div>
         <ul class="tl-bullets">
-          <li>Engineered and optimized REST APIs and relational SQL schemas for a high-concurrency billing and college finance system, handling transactions and financial records while eliminating race conditions during parallel processing.</li>
+          <li>Built and optimised REST APIs and relational SQL schemas for a high-concurrency billing and college finance system, handling transactions and financial records while eliminating race conditions during parallel processing.</li>
           <li>Resolved a critical lost-update bug in the fee module by implementing optimistic locking with a version field to detect concurrent writes, maintaining data consistency without heavy locking.</li>
-          <li>Architected state machines and event-driven handlers using C# to govern real-time simulation mechanics, deterministic game-state progression, and low-latency interaction processing.</li>
-          <li>Implemented automated units, regression test suites, and testing matrices across the continuous integration pipeline, identifying edge-case issues and reducing post-release production defects.</li>
-          <li>Owned end-to-end feature lifecycles in an Agile team, utilizing Git for strict version control, branch isolation, and parallel deployments.</li>
+          <li>Integrated LLM APIs into product features and built state machines and event-driven handlers in C# for real-time simulation mechanics and game-state progression.</li>
+          <li>Wrote unit and regression tests that ran in the continuous integration pipeline, catching edge-case issues and reducing post-release defects.</li>
+          <li>Owned features end to end in an Agile team, using Git for version control, branch isolation and parallel deployments.</li>
         </ul>
       </div>
       <div class="tl-item reveal d2">
         <div class="tl-role">Campus Navigation &amp; Study Space Finder</div>
         <div class="tl-org">24-Hour Hackathon · Team of 4</div>
-        <div class="tl-date">Python · FastAPI · SQL · Git</div>
+        <div class="tl-date">Python · Django · SQL · Git</div>
         <ul class="tl-bullets">
-          <li>Engineered backend REST APIs and deterministic scheduling logic to calculate live campus space availability using multi-source timetable and occupancy data.</li>
-          <li>Managed parallel codebase integration via Git feature branches and structural code reviews, resolving merge conflicts under strict execution deadlines.</li>
-          <li>Designed and delivered a production-ready Minimum Viable Product (MVP) within a 24-hour limit, validating system architecture and real-time processing scalability before a judging panel.</li>
+          <li>Built the backend and scheduling logic that calculates live campus space availability from timetable and occupancy data.</li>
+          <li>Managed parallel codebase integration through Git feature branches and code reviews, resolving merge conflicts under a strict deadline.</li>
+          <li>Delivered a working Minimum Viable Product (MVP) within 24 hours and demonstrated it to a judging panel.</li>
         </ul>
       </div>
     </div>
